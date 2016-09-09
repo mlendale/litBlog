@@ -28,6 +28,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 # Use bootstrap framework 
 gem 'bootstrap', '~> 4.0.0.alpha3'
+# Needed to use assert_template
+gem 'rails-controller-testing'
 
 
 # Use Capistrano for deployment
