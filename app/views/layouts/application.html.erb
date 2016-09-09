@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>LitBlog</title>
-    <%= csrf_meta_tags %>
+    <title><%=full_title(yield(:title))%></title>
+    
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= csrf_meta_tags %>
   </head>
 
   <body>
-    <%= yield %>
+  	<!--Could be put in a partial _header.html.erb-->
+  	<header class="navbar navbar-fixed-top navbarlight bg-inverse">
+		<div class="container">
+	    	<nav>
+	    		<ul class="nav navbar-nav">
+	    			<li class="nav-item active">
+      					<%= link_to "Home", root_path %>
+    				<li class="nav-item">
+      					<%= link_to "Log in", "#" %>
+    				</li>
+	    
+	      		</ul>
+	    	</nav>
+		</div>
+	</header>
+	<div class="container">
+    	<%= yield %>
+    </div>
   </body>
 </html>
