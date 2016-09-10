@@ -3,5 +3,6 @@
 one:
   name: First User
   email: first@test.com
+  password_digest: <%=User.digest("password")%>
 
 

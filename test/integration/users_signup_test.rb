@@ -25,5 +25,6 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     end
     #Test that we are at the user's page
     assert_template "users/show"
+    assert is_logged_in?
   end
 end

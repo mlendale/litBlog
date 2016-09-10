@@ -7,6 +7,8 @@ class UsersController < ApplicationController
     @user = User.new(set_strong_params)
     #Go to User page
     if @user.save
+      # Use the log_in method from SessionHelper
+      log_in @user
       redirect_to user_url(@user)
     
     #Redirect to the Signup page if attributes are invalid  
