@@ -11,7 +11,7 @@ module SessionsHelper
     @current_user=nil
   end
   
-  # Returns current user id or nil
+  # Returns current user or nil
   def current_user
     @current_user ||=User.find_by(id: session[:user_id])
   end

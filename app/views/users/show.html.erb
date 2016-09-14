@@ -1,4 +1,5 @@
 <%=provide(:title,@user.name)%>
+<%=provide(:user_name,@user.name)%>
 <h1><%="Posts by "+@user.name%></h1>
   <div class="col-md-8">
     <% if @user.posts.any? %>

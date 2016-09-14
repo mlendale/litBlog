@@ -19,4 +19,8 @@ class User < ApplicationRecord
     def User.digest(string)
       BCrypt::Password.create(string)
     end
+    
+    def to_param
+      name
+    end
 end
