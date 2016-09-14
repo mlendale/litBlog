@@ -28,6 +28,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 # Use bootstrap framework 
 gem 'bootstrap', '~> 4.0.0.alpha3'
+# Paginates allow to display large number of data
+gem 'will_paginate', '>= 3.1'
+gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
 # Needed to use assert_template
 gem 'rails-controller-testing'
 

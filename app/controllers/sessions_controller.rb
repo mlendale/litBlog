@@ -9,8 +9,11 @@ class SessionsController < ApplicationController
     # Set session[user_id] to user.id
     log_in user
     redirect_to user
+    # Notify successful login 
+    flash[:success]="Welcome"
     
     else
+      # Notify unsuccessful login and rerender the login page
       flash.now[:danger]="Invalid email and/or password"
       render 'new'
     end

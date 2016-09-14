@@ -1,3 +1,21 @@
-<provide(:title,@user.name)>
+<%=provide(:title,@user.name)%>
 <h1><%="Posts by "+@user.name%></h1>
+  <div class="col-md-8">
+    <% if @user.posts.any? %>
+      <ol class="posts">
+      	<% @user.posts.each do |post| %>
+      		<!--Could be put in a partial _header.html.erb-->
+	        <li id="post-<%= post.id %>">
+	        	<%=post.user.name %>
+	        	<span class="date">
+			    	<%= post.created_at.strftime("Created on %m/%d/%Y")   %>.
+			    </span>
+	        	<span class="content"><%= post.content %></span>
+	        	
+			</li>
+		<% end %>
+      </ol>
+      <%= will_paginate @posts %>
+    <% end %>
+  </div>
 
