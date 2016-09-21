@@ -18,6 +18,7 @@
 	   				<% if logged_in?%>
     					<li class="nav-item active"><%= link_to "Post", root_url %></li>
     					<li class="nav-item"><%= link_to "See your posts", user_url(@current_user.name) %></li>
+    					<li class="nav-item"><%= link_to "Edit your info", user_edit_url(@current_user.name) %></li>
       					<li class="nav-item"><%= link_to "Log out", logout_path,method:'delete' %></li>
       				<%else%>
       					<li class="nav-item active"><%= link_to "Home", root_path %></li>

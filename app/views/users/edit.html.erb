@@ -1,2 +1,6 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<%=provide(:title,"Edit user")%>
+<%=provide(:button_text,"Save changes")%>
+<h1><%="Edit your information"%></h1>
+	<div class=row>
+		<%=render 'shared/signup_form'%>
+	</div>
