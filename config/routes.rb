@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   
   #May be useful to define a clearer url for posts
   resources :posts,          only: [:create, :edit, :destroy]
+  match '/posts/:id/edit', to: 'posts#edit', via: :post
+  match '/posts/:id', to: 'posts#update', via: :patch, :as => :update_post
+  
   
   #Allows /user/posts to show users posts
   #May probably be optimized

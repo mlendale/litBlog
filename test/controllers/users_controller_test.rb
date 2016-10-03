@@ -33,14 +33,14 @@ class UsersControllerTest < ActionController::TestCase
     log_in_as(@user)
     get :edit, name:@second_user.name
     assert_not flash.empty?
-    assert_redirected_to user_show_url
+    assert_redirected_to login_url
   end
   
   test "should redirect update when logged in as the wrong user" do
-    log_in_as(@second_user)
+    log_in_as(@user)
     patch :update, name: @second_user.name, user: { name: @second_user.name, email: @second_user.email }
     assert_not flash.empty?
-    assert_redirected_to user_show_url
+    assert_redirected_to login_url
   end
 
 

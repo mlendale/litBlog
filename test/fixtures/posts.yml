@@ -1,16 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-post3:
+post3_byone:
   content: "Lorem ipsum3"
   created_at: <%= 10.minutes.ago %>
   user: one
   
-post2:
+post2_bytwo:
   content: "Lorem ipsum2"
   created_at: <%= 1.hours.ago %>
-  user: second
+  user: two
 
-post1:
+post1_byone:
   content: "Lorem ipsum1"
   created_at: <%= 3.years.ago %>
   user: one
@@ -19,4 +19,4 @@ post1:
 most_recent:
   content: "Latest test"
   created_at: <%= Time.zone.now %>
-  user: second
+  user: two

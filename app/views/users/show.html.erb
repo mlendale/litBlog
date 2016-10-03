@@ -11,7 +11,13 @@
 	        	<span class="date">
 			    	<%= post.created_at.strftime("Created on %m/%d/%Y")   %>.
 			    </span>
-	        	<span class="content"><%= post.content %></span>
+	        	<span class="content"><%= post.content %>
+	        		 <% if current_user?(post.user) %>
+	        			 <%= link_to "edit", edit_post_url(post.id), method: :update %>
+     				 	<%= link_to "delete", post, method: :delete,
+                                       data: { confirm: "Sure?" } %>
+    				<%end%>
+	        	</span>
 	        	
 			</li>
 		<% end %>
