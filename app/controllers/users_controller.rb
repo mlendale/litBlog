@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     if @user.save
       # Use the log_in method from SessionHelper
       log_in @user
+      flash[:success]="Welcome"
       redirect_to user_url(@user)
     
     #Redirect to the Signup page if attributes are invalid  
@@ -37,7 +38,10 @@ class UsersController < ApplicationController
       flash[:success]="Your information have been updated" 
       redirect_to user_url(@user)
     else
-      render 'user_edit'
+      #I may need some explanations here
+      @user = User.find_by(name: params[:name])
+      flash.now[:danger]="Invalid name, email and/or password"
+      render 'edit'
     end
   end
   
@@ -59,6 +63,7 @@ class UsersController < ApplicationController
   def correct_user
     @user = User.find_by(name: params[:name])
     unless @user == current_user
+      flash[:danger] = "If you are user #{@user.name} please log in"
       redirect_to user_url(@user)
     end
   end

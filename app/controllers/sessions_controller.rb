@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     log_in user
     redirect_to user
     # Notify successful login 
-    flash[:success]="Welcome"
+    flash[:success]="Welcome back!"
     
     else
       # Notify unsuccessful login and rerender the login page
