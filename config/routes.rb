@@ -27,5 +27,12 @@ Rails.application.routes.draw do
   match '/:name/posts', to: 'users#update', via: :patch
   #match '/:name/posts', to: 'users#show', via: :post
   
+  #api
+  namespace :api do
+    namespace :v1 do
+      resources :users, only: [:index, :create, :show, :update, :destroy]
+      resources :posts, only: [:index, :create, :show, :update, :destroy]
+    end
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

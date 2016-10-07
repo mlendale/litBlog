@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   # As we don't have a method to destroy user
   # We don't deal with destroying posts when the user is destroyed
+  before_create :generate_authentication_token
   has_many :posts
   
  
@@ -22,5 +23,12 @@ class User < ApplicationRecord
     
     def to_param
       name
+    end
+     #Generate a token to identify an authenticated user
+    def generate_authentication_token
+      loop do
+        self.authentication_token = SecureRandom.base64(64)
+        break unless User.find_by(authentication_token: authentication_token)
+      end
     end
 end

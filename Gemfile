@@ -34,6 +34,16 @@ gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
 # Needed to use assert_template
 gem 'rails-controller-testing'
 
+#API gems
+
+#Limit access to the API
+gem 'redis-throttle', git: 'git://github.com/andreareginato/redis-throttle.git'
+
+#Active model serializer
+gem 'active_model_serializers'
+
+#Rack::Cors specification
+gem 'rack-cors', :require => 'rack/cors'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
