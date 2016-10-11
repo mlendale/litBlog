@@ -7,11 +7,11 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(user_params)
+    user = User.new(user_params)
     #Go to User page
-    if @user.save
+    if user.save
       # Use the log_in method from SessionHelper
-      log_in @user
+      log_in user
       flash[:success]="Welcome"
       redirect_to user_url(@user)
     
